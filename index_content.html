@@ -96,22 +96,28 @@
       	<a href="">git时光穿梭机-版本回退</a>
          <p>在平时的工作中,经常会遇到git版本回退的问题.这里总结一下遇到的情况供需要的时候查询。 1 当你改乱了工作区某个文件的内容,想直接丢弃工作区的修改时,用命令</p>
         </div>
-      	<div class="col-xs-6 col-sm-12 link">
-      	<a href="">Linux输入输出重定向与管道</a>
-         <p>在平时的运维工作中，会经常遇到linux重定向操作和管道符。linux重定向分为输入重定向和输出重定向。简言之，输入重定向就是将文件内容导入到命令中，而输出重定向则是将原本要输出到屏幕上的信息写入到指定的文件中。</p>
-        </div>
-      	<div class="col-xs-6 col-sm-12 link">
-      	<a href="">linux scp命令</a>
-         <p>scp是 secure copy的缩写, scp是linux系统下基于ssh登陆进行安全的远程文件拷贝命令。linux的scp命令可以在linux服务器之间复制文件和目录。</p>
-        </div>
-      	<div class="col-xs-6 col-sm-12 link">
-      	<a href="">Lara系统安装</a>
-         <p>下载源码 在命令行输入 git clone https://github.com/zhangfangsong/Lara.git 下载源码， 国内网速慢的同学可以用码云：https://gitee.com/zfs/Lara.git</p>
-        </div>
-      	<div class="col-xs-6 col-sm-12 link">
-      	<a href="">Lara博客系统v1.0版本发布</a>
-         <p>Lara是一款基于Laravel框架5.5版本开发的个人博客系统，它灵活轻巧，简单易用并易于扩展，适合搭建个人博客或作为企业CMS使用。</p>
-        </div>
+        <p>在平时的工作中,经常会遇到git版本回退的问题.这里总结一下遇到的情况供需要的时候查询</p>
+
+<p>1 当你改乱了工作区某个文件的内容,想直接丢弃工作区的修改时,用命令
+
+git checkout -- file</p>
+<p>2 当你不但改乱了工作区某个文件的内容,还添加到了暂存区时,想丢弃修改,分两步,第一步用命令
+
+git reset HEAD file
+就回到了场景1，第二步按场景1操作.</p>
+
+<p>3 已经提交了不合适的修改到版本库时,想要撤销本次提交,使用
+
+git reset --hard commit_id
+就可以回到版本号为commit_id的那个版本了(不过前提是没有推送到远程库).</p>
+
+<p>4 如果你不仅提交了不合适的版本,并且还推送到了远程,这种情况可以先按照第3步的操作回退到合适的版本,然后使用本地的版本
+
+强行覆盖远程的分支,使用
+
+git push -f
+即可</p>
+     
      </div>
      <div class="col-xs-6 col-sm-3 right_a">
      	<div class="col-xs-6 col-sm-12">
