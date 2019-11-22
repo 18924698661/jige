@@ -1,0 +1,55 @@
+---
+layout: base
+---
+
+<div class="contact">
+		<div class="container">
+			<div class="row">
+
+				<!-- Get in touch -->
+				<div class="col-lg-8 contact_col">
+			       
+			        	{{content}}
+			    <div class="col-lg-12 mx-auto">
+			      <div class="clearfix">
+			         {% if page.next %}
+			         <a class="btn btn-primary float-left" href="{{page.next.url}}">上一篇： {{page.next.title}}</a>
+			         {% endif %}
+               {% if page.previous %}
+               <a class="btn btn-primary float-right" href="{{page.previous.url}}">下一篇： {{page.previous.title}}</a>
+               {% endif %}
+			      </div>
+			    </div>
+			      
+				</div>
+
+				<!-- Contact Info -->
+				<div class="col-lg-3 offset-xl-1 contact_col">
+					<div class="contact_info">
+						<div class="contact_info_section">
+							<div class="contact_info_title">Marketing</div>
+							<ul>
+								<li>Phone: <span>+53 345 7953 3245</span></li>
+								<li>Email: <span>yourmail@gmail.com</span></li>
+							</ul>
+						</div>
+						<div class="contact_info_section">
+							<div class="contact_info_title">Shippiing & Returns</div>
+							<ul>
+								<li>Phone: <span>+53 345 7953 3245</span></li>
+								<li>Email: <span>yourmail@gmail.com</span></li>
+							</ul>
+						</div>
+						<div class="contact_info_section">
+							<div class="contact_info_title">Information</div>
+							<ul>
+								<li>Phone: <span>+53 345 7953 3245</span></li>
+								<li>Email: <span>yourmail@gmail.com</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>

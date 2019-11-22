@@ -1,4 +1,69 @@
-<!DOCTYPE html>
+# 输出
+用 `{{}}` 进行输出，如：
+```
+{{ age }}
+{{ page.hehe }}
+{{ '么么哒' }}
+```
+
+# 过滤器
+对输出内容进行过滤。
+## 格式
+```
+{{page.zhaiyao | truncate:5}}
+```
+
+## 常见的过滤器
+过滤器名 | 描述
+--- | ---
+truncate |  截取指定长度的字符串，第2个参数追加到字符串的尾部  {{ 'foobarfoobar' | truncate: 5, '.' }} # => 'foob.'
+strip_html |  删除 HTML 标签  {{ '<a href="">123</a>' | strip_html }} => 123
+请参考： | http://ju.outofmemory.cn/entry/149459
+百度查： | jekyll语法 -> 第一条
+
+# 全局变量
+- page 代表当前页面，可以获取当前页面中定义的数据
+- site 用于获取 `_config.yml` 配置文件中的数据
+- content 用在模板文件中，代表子模板的内容
+- paginator 获取分页的内容
+
+
+# 目录结构
+- _config.yml 文件，配置文件，在这个文件中配置的内容可以通过`site`全局变量获取
+- _includes 文件夹，用于放置include包含的文件
+
+
+
+# 提取公共部分
+1. include 包含的方式
+> 1. 用 `{% include 文件路径 %}` 包含文件
+> 2. 会去到网站根目录下的`_includes`文件夹下找相应的文件
+
+2. layout 布局的方式(店长推荐)
+> 1. 在网站根目录新建一个 `_layouts` 文件夹
+> 2. 搞一个基本模板，将每个页面不同内容替换成 `{{content}}`
+> 3. 在子模板中继承基本模板 
+```
+---
+layout: 模板名
+---
+```
+> 4. 子模板中的内容会自动被放到基本模板中 `{{content}}` 的位置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Contact</title>
@@ -10,6 +75,9 @@
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/contact.css">
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -180,106 +248,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<!-- Contact -->
-	
-	<div class="contact">
-		<div class="container">
-			<div class="row">
-
-				<!-- Get in touch -->
-				<div class="col-lg-8 contact_col">
-			        <div>
-			        	<h2 style="color: black;">git时光穿梭机-版本回退</h2>
-			         <p style="text-indent: 15px;">在平时的工作中,经常会遇到git版本回退的问题.这里总结一下遇到的情况供需要的时候查询</p>
-
-                     <p>1 当你改乱了工作区某个文件的内容,想直接丢弃工作区的修改时,用命令
-
-                         git checkout -- file</p>
-                     <p>2 当你不但改乱了工作区某个文件的内容,还添加到了暂存区时,想丢弃修改,分两步,第一步用命令
-
-                        git reset HEAD file
-                        就回到了场景1，第二步按场景1操作.</p>
-
-                     <p>3 已经提交了不合适的修改到版本库时,想要撤销本次提交,使用
-
-                       git reset --hard commit_id 
-                       就可以回到版本号为commit_id的那个版本了(不过前提是没有推送到远程库).</p>
-
-                     <p>4 如果你不仅提交了不合适的版本,并且还推送到了远程,这种情况可以先按照第3步的操作回退到合适的版本,然后使用本地的版本
-
-                       强行覆盖远程的分支,使用git push -f即可</p>
-			        </div>
-				</div>
-
-				<!-- Contact Info -->
-				<div class="col-lg-3 offset-xl-1 contact_col">
-					<div class="contact_info">
-						<div class="contact_info_section">
-							<div class="contact_info_title">Marketing</div>
-							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
-							</ul>
-						</div>
-						<div class="contact_info_section">
-							<div class="contact_info_title">Shippiing & Returns</div>
-							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
-							</ul>
-						</div>
-						<div class="contact_info_section">
-							<div class="contact_info_title">Information</div>
-							<ul>
-								<li>Phone: <span>+53 345 7953 3245</span></li>
-								<li>Email: <span>yourmail@gmail.com</span></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<!-- Footer -->
-	
-	<div class="footer_overlay"></div>
-	<footer class="footer">
-		<div class="footer_background" style="background-image:url(images/footer.jpg)"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-						<div class="footer_logo"><a href="#">Sublime.</a></div>
-						<p>粤ICP备16000810号-<a href="">陈希钻</a>个人博客</p>
-						<div class="footer_social ml-lg-auto">
-							<ul>
-								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-</div>
-
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-<script src="js/contact.js"></script>
-</body>
-</html>
+	</div> -->
