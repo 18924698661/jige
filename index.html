@@ -1,48 +1,26 @@
 ---
-layout: base
+layout: post
 ---
 
-
-
-	<!-- Ads -->
-	<div class="container-fluid" style="width: 90%">
-		<div class="row">
-		    <div class="col-lg-10 ">
-			{% for post in paginator.posts %}
-			<div class="col-lg-12"><pre>
-				<h3><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h3>
-				<p>{{post.excerpt|strip_html|tryncate:100}}</p>
-				<p>Posted by <a href=""> {{post.author|default:site.author}} </a> {{post.date | date_to_long_string}} </p>
-				</pre>
-			</div>
-			{% endfor %}
-
-
-			<div class="col-lg-12">
-			    <div class="clearfix">
-			         {% if paginator.previous_page %}
-			         <a class="btn btn-primary float-left" href="{{site.baseurl}}{{paginator.previous_page_path}}">上一篇</a>
-			         {% else %}
-			         <button class="btn" disabled="">木有了</button>
-			         {% endif %}
-                     {% if paginator.next_page %}
-                     <a class="btn btn-primary float-right" href="{{site.baseurl}}{{paginator.next_page_path}}">下一篇</a>
-                     {% else %}
-                     <button class="btn float-right" disabled="">木有了</button>
-                     {% endif %}
-			    </div>
-			   </div>
-			</div>
-         
-            	{% include aside.html %}
-
-		</div>
-	</div>
-
-	
-
-	
-
-	<!-- Ad -->
-
-
+			<section>
+				<div class="">
+					{% for post in paginator.posts %}
+					<article>
+						<h3><a href="{{site.baseurl}}/{{post.url}}">{{post.title}}</a></h3>
+						<p>{{post.excerpt|strip_html|tryncate:100}}</p>
+						<p>发布于<a href="">{{post.date | date_to_long_string}}</a>, 出自于<a href="">{{post.author|default:site.author}}</a></p>
+					</article>
+					{% endfor %}
+					<div class="clearfix">
+						{% if paginator.previous_page %}
+						<a href="{{site.baseurl}}/{{paginator.previous_page_path}}" class="previous_page">上一页</a>
+						{% else %}
+						<button disabled="">没有了</button>
+						{% endif %}
+						{% if paginator.next_page %}
+						<a href="{{site.baseurl}}/{{paginator.next_page_path}}" class="next_page">下一页</a>
+						{% else %}
+						<button disabled="" class="none">没有了</button>
+						{% endif %}
+					</div>
+				</div>

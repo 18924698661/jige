@@ -1,19 +1,35 @@
-<div class="col-lg-2">
-  <h3>标签</h3>
-  <hr>
-  <div class="taglist">
-    {% for tag in site.tags %}
-      <a href="{{site.baseurl}}/tags.html?{{tag[0]}}">{{tag[0]}}({{tag[1]|size}})</a>
-    {% endfor %}
-
-  </div>
 
 
-  <h3 style="margin-top:50px">友情链接</h3>
-  <hr>
-  <div>
-  	{% for obj in site.data.friends.list %}
-	<p><a href="">{{obj.name}}：{{obj.url}}</a></p>
-	{% endfor %}
-  </div>
-</div>
+		<div class="section_right">
+					<div class="section_right_top">
+						
+						<form>
+							<input type="text" class="text" placeholder="搜索" >
+
+							<input type="submit"  class="submit" value="搜索" onclick="alert('滚，还没写完！！')">
+						</form>
+					</div>
+					<div class="section_right_content">
+						<section>
+							<h3>分类目录</h3>
+							{% for tag in site.tags %}
+							<ul>
+								<li>
+									<a href="{{site.baseurl}}/tags.html?{{tag[0]}}">{{tag[0]}}({{tag[1]|size}})</a>
+								</li>
+							</ul>
+							{% endfor %}
+						</section>
+					</div>
+					<div class="section_right_footer">
+						<div>
+							<h3>友情链接</h3>
+							<ul>
+								{% for obj in site.data.friends.list %}
+								<li>{{obj.name}}：<a href="">{{obj.url}}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>  

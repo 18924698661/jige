@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://www.zfsphp.com/front/js/jquery.js"></script>
+	<script type="text/javascript" src="http://www.zfsphp.com/front/js/nav.js"></script>
+	<link rel="stylesheet" type="text/css" href="/test/css/style.css">
+</head>
+<body>
+	<div class="contain">
+		<div class="res">
+			<header>
+				<div class="top">
+					<h1>ekko个人博客</h1>
+					<p>艾克个人博客是一个要写作业的个人博客，提供一个互联网从业者的学习成果和工作经验总结。</p>
+				</div>
+				<div class="home">
+					<ul>
+						<li><a href="/test/">首页</li></a>
+						<li><a href="/test/tags.html?bootstrap">bootstrap</li></a>
+						<li><a href="/test/tags.html?PHP">PHP语言</li></a>
+						<li><a href="/test/tags.html?JQuery">JQuery</li></a>
+						<li><a href="/test/tags.html?Linxu">linxu</li></a>
+						<li><a href="/test/tags.html?Javascript">Javascript</li></a>
+						<li><a href="/test/tags.html?Html5">Html5 & CSS3</li></a>
+						<li><a href="/test/tags.html?Lara">lara博客</li></a>
+						<li><a href="">其他</li></a>
+					</ul>
+				</div>
+			</header>
+
+
+			<div class="body">
+<div class="section_left">
+<h3 id="linux-scp命令">linux scp命令</h3>
+<p>scp是 secure copy的缩写, scp是linux系统下基于ssh登陆进行安全的远程文件拷贝命令。linux的scp命令可以在linux服务器之间复制文件和目录。</p>
+
+<p>一. 命令格式</p>
+
+<p>scp [参数] [原路径] [目标路径]</p>
+
+<p>二. 参数说明</p>
+
+<p>-1 强制scp命令使用协议ssh1</p>
+
+<p>-2 强制scp命令使用协议ssh2</p>
+
+<p>-4 强制scp命令只使用IPv4寻址</p>
+
+<p>-6 强制scp命令只使用IPv6寻址</p>
+
+<p>-B 使用批处理模式（传输过程中不询问传输口令或短语）</p>
+
+<p>-C 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）</p>
+
+<p>-p 保留原文件的修改时间，访问时间和访问权限。</p>
+
+<p>-q 不显示传输进度条。</p>
+
+<p>-r 递归复制整个目录。</p>
+
+<p>-v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。</p>
+
+<p>-c cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。</p>
+
+<p>-F ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。</p>
+
+<p>-i identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。</p>
+
+<p>-l limit 限定用户所能使用的带宽，以Kbit/s为单位。</p>
+
+<p>-o ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，</p>
+
+<p>-P port 注意是大写的P, port是指定数据传输用到的端口号</p>
+
+<p>-S program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</p>
+
+<p>三. 示例介绍</p>
+
+<ol>
+  <li>从本地复制文件到远程服务器</li>
+</ol>
+
+<p>[root@zfs src]# scp /usr/local/src/nginx-1.12.2.tar.gz root@114.215.203.75:/usr/local/src/
+root@114.215.203.75’s password: 
+nginx-1.12.2.tar.gz                                                                         100%  959KB 958.7KB/s   00:00</p>
+
+<ol>
+  <li>从本地复制目录到远程服务器</li>
+</ol>
+
+<p>[root@zfs src]# scp -r /usr/local/src/nginx-1.12.2 root@114.215.203.75:/usr/local/src/
+root@114.215.203.75’s password: 
+CHANGES                                                                                     100%  272KB 271.7KB/s   00:00  <br />
+nginx.conf                                                                                  100% 2656     2.6KB/s   00:00  <br />
+win-utf                                                                                     100% 3610     3.5KB/s   00:00 
+…</p>
+
+<ol>
+  <li>从远程复制文件到本地</li>
+</ol>
+
+<p>[root@zfs ~]# scp root@114.215.203.75:/usr/local/src/nginx-1.12.2.tar.gz /root/
+root@114.215.203.75’s password: 
+nginx-1.12.2.tar.gz                                                                         100%  959KB 159.8KB/s   00:06</p>
+
+<ol>
+  <li>从远程复制目录到本地</li>
+</ol>
+
+<p>[root@zfs ~]# scp -r root@114.215.203.75:/usr/local/src/nginx-1.12.2 /root/
+root@114.215.203.75’s password: 
+README                                                                                      100%   49     0.1KB/s   00:00  <br />
+ngx_event_posted.h                                                                          100% 1842     1.8KB/s   00:00  <br />
+ngx_event_accept.c                                                                          100%   21KB  21.1KB/s   00:00 
+…</p>
+
+<p>注意：</p>
+
+<p>如果远程服务器防火墙有为scp命令设置了指定的端口，我们需要使用 -P 参数来设置命令的端口号，命令如下：</p>
+
+<p>scp -P 20161 root@114.215.203.75:/usr/local/src/nginx-1.12.2.tar.gz /root/</p>
+
+
+<div class="clearfix">
+	
+	<a href="/test/2019/11/25/post3.html" class="previous_page">上一篇：Vue前端框架</a>
+	
+	
+	<a href="/test/2019/11/25/post1.html" class="next_page">下一篇：git时光穿梭机-版本回退</a>
+	
+</div>
+</div>
+
+   
+
+		<div class="section_right">
+					<div class="section_right_top">
+						
+						<form>
+							<input type="text" class="text" placeholder="搜索" >
+
+							<input type="submit"  class="submit" value="搜索" onclick="alert('滚，还没写完！！')">
+						</form>
+					</div>
+					<div class="section_right_content">
+						<section>
+							<h3>分类目录</h3>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Javascript">Javascript(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?JQuery">JQuery(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?bootstrap">bootstrap(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Html5">Html5(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?PHP">PHP(3)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?git">git(3)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Linxu">Linxu(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Vue">Vue(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Lara">Lara(1)</a>
+								</li>
+							</ul>
+							
+						</section>
+					</div>
+					<div class="section_right_footer">
+						<div>
+							<h3>友情链接</h3>
+							<ul>
+								
+								<li>百度：<a href="">www.baidu.com</a></li>
+								
+								<li>新浪：<a href="">www.xinlang.com</a></li>
+								
+								<li>腾讯：<a href="">www.qq.com</a></li>
+								
+								<li>淘宝：<a href="">www.taobao.com</a></li>
+								
+								<li>阿里巴巴：<a href="">www.libaba.com</a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>  
+
+</div>
+    <div class="pic"></div>
+		</div>
+				<div class="footer">
+               <div><p>如有侵权，请联系18924698661.<a href="">陈希钻</a>-个人博客</p></div>
+	    </div>
+	</div>
+</body>
+</html>

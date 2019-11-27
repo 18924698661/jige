@@ -1,0 +1,26 @@
+---
+layout: base
+---
+<div class="body">
+<div class="section_left">
+{{content}}
+<div class="clearfix">
+	{% if page.next %}
+	<a href="{{site.baseurl}}{{page.next.url}}" class="previous_page">上一篇：{{page.next.title}}</a>
+	{% endif %}
+	{% if page.previous %}
+	<a href="{{site.baseurl}}{{page.previous.url}}" class="next_page">下一篇：{{page.previous.title}}</a>
+	{% endif %}
+</div>
+</div>
+
+   {% include aside.html %}
+</div>
+    <div class="pic"></div>
+		</div>
+				<div class="footer">
+               <div><p>如有侵权，请联系18924698661.<a href="">陈希钻</a>-个人博客</p></div>
+	    </div>
+	</div>
+</body>
+</html>

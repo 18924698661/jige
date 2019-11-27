@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://www.zfsphp.com/front/js/jquery.js"></script>
+	<script type="text/javascript" src="http://www.zfsphp.com/front/js/nav.js"></script>
+	<link rel="stylesheet" type="text/css" href="/test/css/style.css">
+</head>
+<body>
+	<div class="contain">
+		<div class="res">
+			<header>
+				<div class="top">
+					<h1>ekko个人博客</h1>
+					<p>艾克个人博客是一个要写作业的个人博客，提供一个互联网从业者的学习成果和工作经验总结。</p>
+				</div>
+				<div class="home">
+					<ul>
+						<li><a href="/test/">首页</li></a>
+						<li><a href="/test/tags.html?bootstrap">bootstrap</li></a>
+						<li><a href="/test/tags.html?PHP">PHP语言</li></a>
+						<li><a href="/test/tags.html?JQuery">JQuery</li></a>
+						<li><a href="/test/tags.html?Linxu">linxu</li></a>
+						<li><a href="/test/tags.html?Javascript">Javascript</li></a>
+						<li><a href="/test/tags.html?Html5">Html5 & CSS3</li></a>
+						<li><a href="/test/tags.html?Lara">lara博客</li></a>
+						<li><a href="">其他</li></a>
+					</ul>
+				</div>
+			</header>
+
+
+			<div class="body">
+<div class="section_left">
+<h3 id="linux输入输出重定向与管道">Linux输入输出重定向与管道</h3>
+<p>在平时的运维工作中，会经常遇到linux重定向操作和管道符。linux重定向分为输入重定向和输出重定向。简言之，输入重定向就是将文件内容导入到命令中，而输出重定向则是将原本要输出到屏幕上的信息写入到指定的文件中。</p>
+
+<p>重定向</p>
+
+<p>标准输入重定向(STDIN,文件描述符为0)：默认从键盘输入，也可以从其他文件或命令输入</p>
+
+<p>标准输出重定向(STDOUT,文件描述符为1)：默认输出到屏幕</p>
+
+<p>标准错误重定向(STDERR,文件描述符为2)：默认输出到屏幕</p>
+
+<p>输入重定向及其作用</p>
+
+<p>命令 &lt; 文件 : 将文件作为命令的标准输入</p>
+
+<p>命令 « 分界符 : 从标准输入中读取，直到遇见分界符才终止</p>
+
+<p>命令 &lt; 文件1 &gt; 文件2 : 将文件1作为命令的标准输入并将标准输出到文件2</p>
+
+<p>输出重定向及其作用</p>
+
+<p>命令 &gt; 文件 : 将标准输出重定向到文件中(清空原有文件的数据)</p>
+
+<p>命令 » 文件 : 将标准输出重定向到文件中(追加到原有的文件中)</p>
+
+<p>命令 2&gt; 文件 : 将标准错误重定向到一个文件中(清空原有文件的数据)</p>
+
+<p>命令 2» 文件 : 将标准错误重定向到一个文件中(追加到原有文件中)</p>
+
+<p>命令 » 文件 2&gt;&amp;1 或 命令 &amp;» 文件 : 将标准输出和标准错误重定向到文件中(追加到原有文件中)</p>
+
+<p>[root@linux ~]# ls -l &gt; ls.txt
+[root@linux ~]# cat ls.txt 
+总用量 581856
+-rw-r–r–.  1 root  root  587202560 1月   5 22:47 560_file
+drwxr-xr-x.  2 root  root          6 1月  20 22:20 Desktop
+-rw-r–r–.  1 root  root         19 1月   5 22:36 diff_a.txt
+-rw-r–r–.  1 root  root         19 1月   5 22:37 diff_b.txt
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Documents
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Downloads
+drwxr-xr-x.  3 root  root         16 1月   5 22:52 etc
+-rw-r–r–.  1 root  root    8596360 1月   5 22:50 etc.tar.gz
+drwx——. 57 linux linux      4096 1月   5 22:57 findresults
+-rw-r–r–.  1 root  root          0 1月  20 22:33 linuxprobe
+-rw-r–r–.  1 root  root          0 1月  20 23:39 ls.txt
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Music
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Pictures
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Public
+-rw-r–r–.  1 root  root         55 1月  20 22:36 readme.txt
+-rw-r–r–.  1 root  root         50 1月  20 22:39 stderr.txt
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Templates
+drwxr-xr-x.  2 root  root          6 1月   5 21:53 Videos
+ls -l &gt; ls.txt 将ls命令的标准输出重定向到文件中,并且是以覆盖的方式,这样会清空ls.txt原有的内容。</p>
+
+<p>[root@linux ~]# echo ‘welcome to beijing’ &gt; ls.txt 
+[root@linux ~]# echo ‘welcome to hangzhou’ » ls.txt 
+[root@linux ~]# cat ls.txt 
+welcome to beijing
+welcome to hangzhou
+echo ‘welcome to beijing’ &gt; ls.txt以覆盖的方式将命令的标准输出重定向到文件ls.txt可见ls.txt文件原有的内容被清除了。</p>
+
+<p>echo ‘welcome to hangzhou’ » ls.txt以追加的方式将命令的标准输出重定向到文件ls.txt可见ls.txt文件原有的内容被保留了。</p>
+
+
+<div class="clearfix">
+	
+	<a href="/test/2019/11/25/post5.html" class="previous_page">上一篇：Lara博客系统v1.0版本发布</a>
+	
+	
+	<a href="/test/2019/11/25/post3.html" class="next_page">下一篇：Vue前端框架</a>
+	
+</div>
+</div>
+
+   
+
+		<div class="section_right">
+					<div class="section_right_top">
+						
+						<form>
+							<input type="text" class="text" placeholder="搜索" >
+
+							<input type="submit"  class="submit" value="搜索" onclick="alert('滚，还没写完！！')">
+						</form>
+					</div>
+					<div class="section_right_content">
+						<section>
+							<h3>分类目录</h3>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Javascript">Javascript(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?JQuery">JQuery(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?bootstrap">bootstrap(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Html5">Html5(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?PHP">PHP(3)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?git">git(3)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Linxu">Linxu(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Vue">Vue(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/test/tags.html?Lara">Lara(1)</a>
+								</li>
+							</ul>
+							
+						</section>
+					</div>
+					<div class="section_right_footer">
+						<div>
+							<h3>友情链接</h3>
+							<ul>
+								
+								<li>百度：<a href="">www.baidu.com</a></li>
+								
+								<li>新浪：<a href="">www.xinlang.com</a></li>
+								
+								<li>腾讯：<a href="">www.qq.com</a></li>
+								
+								<li>淘宝：<a href="">www.taobao.com</a></li>
+								
+								<li>阿里巴巴：<a href="">www.libaba.com</a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>  
+
+</div>
+    <div class="pic"></div>
+		</div>
+				<div class="footer">
+               <div><p>如有侵权，请联系18924698661.<a href="">陈希钻</a>-个人博客</p></div>
+	    </div>
+	</div>
+</body>
+</html>

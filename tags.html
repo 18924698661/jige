@@ -2,51 +2,42 @@
 layout: base
 ---
 
-<!-- Page Header -->
-<header class="masthead">
-  <div class="overlay"></div>
-  <div class="container-fluid" style="background-image: url('{{site.baseurl}}/images/product_8.jpg');padding:0 60px;">
-    <div class="row" >
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h1></h1>
-          <span class="subheading">身体和灵魂都要在路上，生命不息，奋斗不止！</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
 
-<!-- Main Content -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-8 col-md-8 mx-auto">
-      <style>.tagposts{display:none;}</style>
+  <div class="body">
+    <div class="section_left">
+     
       <!-- 文章列表开始 -->
       {% for tag in site.tags %}
       	<div class="tagposts" id="{{tag[0]}}">
-	      <h1>{{tag[0]}}</h1>
+	      <h2>{{tag[0]}}</h2>
       	  {% for post in tag[1] %}
-      	  	<div class="post-preview">
-	          <a href="{{site.baseurl}}{{post.url}}">
-	            <h2 class="post-title">{{post.title}}</h2>
-	            <h3 class="post-subtitle">{{post.excerpt|strip_html|truncate:100}}</h3>
+          <article>
+	         <h3> <a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h3>
+	            <p class="post-subtitle">{{post.excerpt|strip_html|truncate:100}}</p>
 	          </a>
 	          <p class="post-meta">Posted by <a href="#">{{post.author|default:site.author}}</a> on {{post.date|date_to_long_string}}</p>
-	        </div>
-	        <hr>
+            </article>
       	  {% endfor %}
-      	</div>
+
+        </div>
       {% endfor %}
       <!-- 文章列表结束 -->
     </div>
 
     {% include aside.html %}
-    </div>
-  </div>
 </div>
+    <div class="pic"></div>
+    </div>
+        <div class="footer">
+               <div><p>粤ICP备16000810号-<a href="">陈希钻</a>-个人博客</p></div>
+      </div>
+  </div>
+</body>
+</html>
 
-<hr>
+
+
+
 
 <script>
 window.onload = function()
