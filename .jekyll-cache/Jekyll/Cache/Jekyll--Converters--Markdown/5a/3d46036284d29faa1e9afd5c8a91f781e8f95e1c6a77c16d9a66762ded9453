@@ -1,0 +1,43 @@
+I"2<h3 id="js实现手风琴效果">JS实现手风琴效果</h3>
+<h4 id="前端好看的小技巧">前端好看的小技巧</h4>
+
+<p>JS实现手风琴效果是前端很多同学必要掌握的小技巧，对学习和保存资源也是及其好用，今天就为大家带来手风琴的效果展示。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>要求<span class="nt">&lt;span&gt;&lt;/span&gt;&lt;/h2&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;p&gt;</span>要求要求要求要求要求要求要求要求要求要求要求要求要求要求要求要求要求<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>信念<span class="nt">&lt;span&gt;&lt;/span&gt;&lt;/h2&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;p&gt;</span>信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念信念<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>接受<span class="nt">&lt;span&gt;&lt;/span&gt;&lt;/h2&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;p&gt;</span>接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受接受<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>现实<span class="nt">&lt;span&gt;&lt;/span&gt;&lt;/h2&gt;</span>
+            <span class="nt">&lt;div&gt;&lt;p&gt;</span>现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实现实<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>JQuery和Javascript代码</p>
+<pre><code class="language-Js">&lt;script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"&gt;
+&lt;script type="text/javascript"&gt;
+$(".box ul li h2").click(function(e){
+    e.stopPropagation();
+    //被点击的h2的next的div下拉展开，其余的li内部的div上拉收起，时间800毫秒。
+    $(this).next().stop().slideDown(800).parents("li").siblings().find("div").stop().slideUp(800);
+    $(this).parent().stop().addClass("cur").siblings().stop().removeClass("cur");
+})
+//点击事件
+$(document).click(function(){
+    //所有div上拉收起，时间800毫秒。
+    $(".box ul li").find("div").slideUp(800)
+;
+})
+&lt;/script&gt;
+</code></pre>
+:ET

@@ -1,8 +1,5 @@
-I"�<h2 id="linux输入输出重定向与管道">Linux输入输出重定向与管道</h2>
+I"Y<h3 id="linux输入输出重定向与管道">Linux输入输出重定向与管道</h3>
 <p>在平时的运维工作中，会经常遇到linux重定向操作和管道符。linux重定向分为输入重定向和输出重定向。简言之，输入重定向就是将文件内容导入到命令中，而输出重定向则是将原本要输出到屏幕上的信息写入到指定的文件中。</p>
-<blockquote>
-  <p>引用文本 Blockquotes</p>
-</blockquote>
 
 <p>重定向</p>
 
@@ -63,4 +60,5 @@ welcome to hangzhou
 echo ‘welcome to beijing’ &gt; ls.txt以覆盖的方式将命令的标准输出重定向到文件ls.txt可见ls.txt文件原有的内容被清除了。</p>
 
 <p>echo ‘welcome to hangzhou’ » ls.txt以追加的方式将命令的标准输出重定向到文件ls.txt可见ls.txt文件原有的内容被保留了。</p>
+
 :ET
