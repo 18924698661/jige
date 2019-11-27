@@ -1,2 +1,4 @@
 author: ekko
 baseurl: /jige
+paginate: 5
+plugins: [jekyll-paginate]

@@ -51,7 +51,7 @@ layout: 模板名
 > 4. 子模板中的内容会自动被放到基本模板中 `{{content}}` 的位置
 
 
-
+gem install jekyll-paginate
 
 
 

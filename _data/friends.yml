@@ -1,0 +1,13 @@
+list:
+  -
+    name: 百度
+    url: "http://baidu.com"
+  -
+    name: 无情
+    url: "https://www.wuqing.com"
+  -
+    name: 阿里巴巴
+    url: "https://www.taobao.com"
+  -
+    name: 腾讯
+    url: "https://www.qq.com"

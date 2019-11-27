@@ -1,0 +1,67 @@
+I"�<h2 id="git时光穿梭机-版本回退">git时光穿梭机-版本回退</h2>
+<blockquote>
+  <p>引用文本 Blockquotes</p>
+</blockquote>
+
+<hr />
+<p>Error
+—————————
+系统找不到指定的文件。 
+C:\Users\Administrator\Desktop\test\changed
+—————————
+确定 <br />
+—————————</p>
+
+<p>预格式化文本：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+</code></pre></div></div>
+
+<h4 id="js代码">JS代码</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="html-代码-html-codes">HTML 代码 HTML codes</h4>
+<p>```html
+&lt;!DOCTYPE html&gt;</p>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <meta name="keywords" content="Editor.md, Markdown, Editor" />
+        <title>Hello world!</title>
+        <style type="text/css">
+            body{font-size:14px;color:#444;font-family: "Microsoft Yahei", Tahoma, "Hiragino Sans GB", Arial;background:#fff;}
+            ul{list-style: none;}
+            img{border:none;vertical-align: middle;}
+        </style>
+    </head>
+    <body>
+        <h1 class="text-xxl">Hello world!</h1>
+        <p class="text-green">Plain text</p>
+    </body>
+</html>
+<p>在平时的工作中,经常会遇到git版本回退的问题.这里总结一下遇到的情况供需要的时候查询</p>
+
+<h4 id="1-当你改乱了工作区某个文件的内容想直接丢弃工作区的修改时用命令">1 当你改乱了工作区某个文件的内容,想直接丢弃工作区的修改时,用命令</h4>
+
+<p>git checkout – file</p>
+<h4 id="2-当你不但改乱了工作区某个文件的内容还添加到了暂存区时想丢弃修改分两步第一步用命令">2 当你不但改乱了工作区某个文件的内容,还添加到了暂存区时,想丢弃修改,分两步,第一步用命令</h4>
+
+<p>git reset HEAD file
+就回到了场景1，第二步按场景1操作.</p>
+
+<h4 id="3-已经提交了不合适的修改到版本库时想要撤销本次提交使用">3 已经提交了不合适的修改到版本库时,想要撤销本次提交,使用</h4>
+
+<p>git reset –hard commit_id 
+就可以回到版本号为commit_id的那个版本了(不过前提是没有推送到远程库).</p>
+
+<h4 id="4-如果你不仅提交了不合适的版本并且还推送到了远程这种情况可以先按照第3步的操作回退到合适的版本然后使用本地的版本">4 如果你不仅提交了不合适的版本,并且还推送到了远程,这种情况可以先按照第3步的操作回退到合适的版本,然后使用本地的版本</h4>
+
+<p>强行覆盖远程的分支,使用git push -f即可</p>
+
+:ET

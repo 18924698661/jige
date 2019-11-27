@@ -1,0 +1,19 @@
+<div class="col-lg-2">
+  <h3>标签</h3>
+  <hr>
+  <div class="taglist">
+    {% for tag in site.tags %}
+      <a href="{{site.baseurl}}/tags.html?{{tag[0]}}">{{tag[0]}}({{tag[1]|size}})</a>
+    {% endfor %}
+
+  </div>
+
+
+  <h3 style="margin-top:50px">友情链接</h3>
+  <hr>
+  <div>
+  	{% for obj in site.data.friends.list %}
+	<p><a href="">{{obj.name}}：{{obj.url}}</a></p>
+	{% endfor %}
+  </div>
+</div>
