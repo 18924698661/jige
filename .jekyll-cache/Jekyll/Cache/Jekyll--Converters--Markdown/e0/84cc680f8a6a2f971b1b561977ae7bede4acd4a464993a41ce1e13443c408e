@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-	<script type="text/javascript" src="http://www.zfsphp.com/front/js/jquery.js"></script>
-	<script type="text/javascript" src="http://www.zfsphp.com/front/js/nav.js"></script>
-	<link rel="stylesheet" type="text/css" href="/jige/css/style.css">
-</head>
-<body>
-	<div class="contain">
-		<div class="res">
-			<header>
-				<div class="top">
-					<h1>ekko个人博客</h1>
-					<p>艾克个人博客是一个要写作业的个人博客，提供一个互联网从业者的学习成果和工作经验总结。</p>
-				</div>
-				<div class="home">
-					<ul>
-						<li><a href="/jige/">首页</li></a>
-						<li><a href="/jige/tags.html?bootstrap">bootstrap</li></a>
-						<li><a href="/jige/tags.html?PHP">PHP语言</li></a>
-						<li><a href="/jige/tags.html?JQuery">JQuery</li></a>
-						<li><a href="/jige/tags.html?Linxu">linxu</li></a>
-						<li><a href="/jige/tags.html?Javascript">Javascript</li></a>
-						<li><a href="/jige/tags.html?Html5">Html5 & CSS3</li></a>
-						<li><a href="/jige/tags.html?Lara">lara博客</li></a>
-						<li><a href="">其他</li></a>
-					</ul>
-				</div>
-			</header>
-
-
-			<div class="body">
-<div class="section_left">
-<h3 id="vue前端框架">Vue前端框架</h3>
+I"�<h3 id="vue前端框架">Vue前端框架</h3>
 <h4 id="style样式的属性写法">style样式的属性写法</h4>
 
 <p><img src="/jige/images/vue1.png" alt="markdown" title="markdown" /></p>
@@ -53,9 +18,6 @@
 <span class="nt">&lt;/div&gt;</span> 
 
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"clear"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;br&gt;</span>
-    <span class="nt">&lt;br&gt;</span>
-    
     <span class="nt">&lt;div</span> <span class="na">v-bind:id=</span><span class="s">"'list-' + id"</span><span class="nt">&gt;</span>欢迎来到祖安<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
@@ -127,115 +89,4 @@ Javascript</p>
     <span class="c1">// document.write(vm.$el === document.getElementById('vue_det'))</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre></div></div>
-
-<div class="clearfix">
-	
-	<a href="/jige/2019/11/25/post4.html" class="previous_page">上一篇：Linux输入输出重定向与管道</a>
-	
-	
-	<a href="/jige/2019/11/25/post2.html" class="next_page">下一篇：linux scp命令</a>
-	
-</div>
-</div>
-
-   
-
-		<div class="section_right">
-					<div class="section_right_top">
-						
-						<form>
-							<input type="text" class="text" placeholder="搜索" >
-
-							<input type="submit"  class="submit" value="搜索" onclick="alert('滚，还没写完！！')">
-						</form>
-					</div>
-					<div class="section_right_content">
-						<section>
-							<h3>分类目录</h3>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Javascript">Javascript(2)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?JQuery">JQuery(1)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?bootstrap">bootstrap(1)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Html5">Html5(2)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?PHP">PHP(3)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?git">git(3)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Linxu">Linxu(2)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Vue">Vue(1)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Lara">Lara(1)</a>
-								</li>
-							</ul>
-							
-						</section>
-					</div>
-					<div class="section_right_footer">
-						<div>
-							<h3>友情链接</h3>
-							<ul>
-								
-								<li>百度：<a href="">www.baidu.com</a></li>
-								
-								<li>新浪：<a href="">www.xinlang.com</a></li>
-								
-								<li>腾讯：<a href="">www.qq.com</a></li>
-								
-								<li>淘宝：<a href="">www.taobao.com</a></li>
-								
-								<li>阿里巴巴：<a href="">www.libaba.com</a></li>
-								
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>  
-
-</div>
-    <div class="pic"></div>
-		</div>
-				<div class="footer">
-               <div><p>如有侵权，请联系18924698661.<a href="">陈希钻</a>-个人博客</p></div>
-	    </div>
-	</div>
-</body>
-</html>
+:ET
