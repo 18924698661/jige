@@ -1,4 +1,4 @@
-I"�<h3 id="vue前端框架">Vue前端框架</h3>
+I"*<h3 id="vue前端框架">Vue前端框架</h3>
 <h4 id="style样式的属性写法">style样式的属性写法</h4>
 
 <p><img src="/jige/images/vue1.png" alt="markdown" title="markdown" /></p>
@@ -89,4 +89,6 @@ Javascript</p>
     <span class="c1">// document.write(vm.$el === document.getElementById('vue_det'))</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre></div></div>
+<h4 id="set用法">set用法</h4>
+<p><img src="/jige/images/vue2.png" alt="markdown" title="markdown" /></p>
 :ET
