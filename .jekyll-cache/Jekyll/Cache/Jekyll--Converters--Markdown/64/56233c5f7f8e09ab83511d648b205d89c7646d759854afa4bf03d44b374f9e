@@ -1,0 +1,32 @@
+I"�<h3 id="点名系统是大家生活上班上课常用到的一个软件现在随着科技的发达很少用纸质点名今天就教大家用javascript制作一个点名小系统">点名系统是大家生活上班上课常用到的一个软件，现在随着科技的发达，很少用纸质点名，今天就教大家用javascript制作一个点名小系统。</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;&lt;/title&gt;</span>
+	<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"buttom"</span> <span class="na">value=</span><span class="s">"strat"</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"buttom"</span> <span class="na">value=</span><span class="s">"stop"</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+	<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">陈</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">李</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">王</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">黄</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">何</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">曹</span><span class="dl">"</span><span class="p">];</span>
+	<span class="kd">var</span> <span class="nx">timer</span><span class="p">;</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">onclick</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>
+		<span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+		<span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+			<span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+			<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">num</span><span class="p">];</span>
+		<span class="p">},</span><span class="mi">100</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">input</span><span class="dl">"</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">onclick</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span>
+		<span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+:ET

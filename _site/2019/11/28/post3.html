@@ -127,6 +127,51 @@ Javascript</p>
 <h4 id="set用法">set用法</h4>
 <p><img src="/jige/images/vue3.png" alt="markdown" title="markdown" /></p>
 
+<h3 id="vue组件加法小游戏">Vue组件，（加法小游戏）</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>加法<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.staticfile.org/vue/2.4.2/vue.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;counter</span> <span class="na">ref=</span><span class="s">"one"</span> <span class="err">@</span><span class="na">change=</span><span class="s">"chan"</span><span class="nt">&gt;&lt;/counter&gt;</span>
+    <span class="nt">&lt;counter</span> <span class="na">ref=</span><span class="s">"two"</span> <span class="err">@</span><span class="na">change=</span><span class="s">"chan"</span><span class="nt">&gt;&lt;/counter&gt;</span>
+    <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">counter</span><span class="dl">'</span><span class="p">,{</span>
+        <span class="na">template</span><span class="p">:</span><span class="dl">'</span><span class="s1">&lt;div @click="handleClick"&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="na">number</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">handleClick</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">number</span> <span class="o">++</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+        <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">total</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">chan</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">one</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">two</span><span class="p">.</span><span class="nx">number</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
 <div class="clearfix">
 	
 	<a href="/jige/2019/11/28/post4.html" class="previous_page">上一篇：Linux输入输出重定向与管道</a>
@@ -166,19 +211,19 @@ Javascript</p>
 							
 							<ul>
 								<li>
+									<a href="/jige/tags.html?Vue">Vue(2)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/jige/tags.html?Html5">Html5(3)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
 									<a href="/jige/tags.html?Linxu">Linxu(2)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Vue">Vue(1)</a>
-								</li>
-							</ul>
-							
-							<ul>
-								<li>
-									<a href="/jige/tags.html?Html5">Html5(2)</a>
 								</li>
 							</ul>
 							
@@ -203,6 +248,12 @@ Javascript</p>
 							<ul>
 								<li>
 									<a href="/jige/tags.html?bootstrap">bootstrap(1)</a>
+								</li>
+							</ul>
+							
+							<ul>
+								<li>
+									<a href="/jige/tags.html?JavaScript">JavaScript(1)</a>
 								</li>
 							</ul>
 							

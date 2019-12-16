@@ -1,0 +1,37 @@
+I"<h3 id="git时光穿梭机-版本回退">git时光穿梭机-版本回退</h3>
+<p>在平时的工作中,经常会遇到git版本回退的问题.这里总结一下遇到的情况供需要的时候查询</p>
+
+<h3 id="vue插槽语法的使用">vue插槽语法的使用</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.staticfile.org/vue/2.4.2/vue.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+	<span class="nt">&lt;title&gt;</span>插槽语法<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;body-content&gt;</span>
+
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span> <span class="na">slot=</span><span class="s">"header"</span><span class="nt">&gt;</span>header稳定<span class="nt">&lt;/div&gt;</span>
+		<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer"</span> <span class="na">slot=</span><span class="s">"footer"</span><span class="nt">&gt;</span>footer<span class="nt">&lt;/div&gt;</span>
+	<span class="nt">&lt;/body-content&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+   <span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">body-content</span><span class="dl">'</span><span class="p">,{</span>
+   	<span class="na">template</span><span class="p">:</span> <span class="s2">`&lt;div&gt;
+   	             &lt;slot name='ekko'&gt;&lt;h1&gt;clearlove&lt;/h1&gt;&lt;/slot&gt;
+			   	 &lt;slot name='header'&gt;&lt;/slot&gt;
+			   	 &lt;div class='content'&gt;content&lt;/div&gt;
+			   	 &lt;slot name='footer'&gt;&lt;/slot&gt;
+			    &lt;/div&gt;`</span>
+   <span class="p">})</span>
+	<span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+		<span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#root</span><span class="dl">"</span>
+	<span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>最后实现效果如图：
+<img src="/jige/images/vue4.png" alt="markdown" title="markdown" /></p>
+:ET
